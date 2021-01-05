@@ -1,0 +1,11 @@
+{% extends "pool/layout.html" %}
+{% block title %}
+
+{% endblock %}
+{% block content %}
+<form action="name" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submin" value="Send">
+</form>
+{% endblock %}

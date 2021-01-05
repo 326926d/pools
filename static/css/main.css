@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+.body-content{
+    flex: 1 0 auto;
+}
+.navbar {
+    font-size: 20px;
+    background-color: darkgray;
+    font-style: italic;
+}
+
+.footer {
+    /* position: fixed; */
+    /* font-size: 15px; */
+    /* text-align: center; */
+    flex-shrink: 0;
+    background-color: grey;
+}
+.footer p{
+    text-align: center;
+    font-style: italic;
+}

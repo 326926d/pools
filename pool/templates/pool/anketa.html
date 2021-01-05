@@ -1,0 +1,19 @@
+{% extends "pool/layout.html" %}
+{% block title %}
+anketa
+{% endblock %}
+{% block content %}
+<p>Anketa</p>
+<form method="POST" action="anketa/">
+{% csrf_token %}
+<p>
+    <label>enter name</label>
+    <input type="text" name="name"/>
+    <label>Enter disciple</label>
+    <input type="text" name="disciple"/>
+    <label>enter level</label>
+    <input type="text" name="level"/>
+</p>
+<input type="button" value="Send">
+</form>
+{% endblock %}
