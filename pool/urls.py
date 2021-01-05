@@ -10,4 +10,6 @@ urlpatterns = [
     path('register/', views.register, name = 'register'),
     path('create/', views.create),
     path('user_register/', views.user_register, name='user_register'),
+    path('home_view/', views.home_view, name='home_view'), 
+    path('get_name/', views.get_name, name='get_name'),
 ]

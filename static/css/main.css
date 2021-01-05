@@ -10,21 +10,36 @@ body{
 }
 .body-content{
     flex: 1 0 auto;
+    /* background-color: skyblue; */
 }
 .navbar {
     font-size: 20px;
     background-color: darkgray;
-    font-style: italic;
+    font-style: oblique;
+    font-family: Verdana;
+    
 }
-
+.menu{
+    height: 100%;
+    width: 15%;
+    left: 0;
+    background-color: gray;
+}
+.menu a{
+    display: block;
+}
 .footer {
     /* position: fixed; */
     /* font-size: 15px; */
     /* text-align: center; */
     flex-shrink: 0;
-    background-color: grey;
+    background-color: greenyellow;
 }
 .footer p{
     text-align: center;
     font-style: italic;
+}
+.logo{
+    width: 10px;
+    height: 10px;
 }

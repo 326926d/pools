@@ -5,15 +5,18 @@ from django.urls import reverse
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
-from .forms import LoginForm, UserRegistrationForm, RegisterForm
+from .forms import LoginForm, UserRegistrationForm, RegisterForm, GeeksForms, Student, NameForm
 from .models import Tutors
 from django.contrib.auth.models import User
 from . forms import RegisterForm
 
 
+
+
 def index(request):
     tutor = Tutors.objects.all()
-    return render(request, 'pool/index.html', {'tutor': tutor})
+    stu = Student()
+    return render(request, 'pool/index.html', {'tutor': tutor}, {'form': stu})
 
 # def anketa(request):
 #     if request.method == "POST":
@@ -52,7 +55,7 @@ def user_login(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return render(request, 'pool/index.html', {'user': user})
+                    return render(request, 'pool/cabinet.html', {'user': user})
                 else:
                     return HttpResponse('disabled account')
             else:
@@ -133,6 +136,39 @@ def user_register(request):
     return render(request, template, {'form': form})
 
 
+
+def home_view(request): 
+	context ={} 
+
+	# create object of form 
+	form = GeeksForms(request.POST or None, request.FILES or None) 
+	
+	# check if form data is valid 
+	if form.is_valid(): 
+		# save the form data to model 
+		form.save() 
+
+	context = {'form': form} 
+	return render(request, "index.html", context) 
+
+
+def get_name(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = NameForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            return HttpResponse('thanks')
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = NameForm()
+
+    return render(request, 'index.html', {'form': form})
 
 
    

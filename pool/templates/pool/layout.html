@@ -17,14 +17,26 @@
 
 <body>
   
-<div class="navbar">
+<div class="navbar" img src={% static "img/logo.png" %} >
     <a href="{% url 'user_login' %}">Login</a>
     <a href="{% url 'register' %}">Register</a>
     <a href="{% url 'logout' %}">LogOut</a>
 </div>
 
 
+
 <div class="body-content">
+    <!-- <div class="menu">
+        <h2>Menu</h2>
+        <a href="first">First</a>
+        <a href="Second">Second</a>
+        <a href="Third">Third</a>
+        <a href="Forth">Forth</a>
+        <a href="Fithe">Fithe</a>
+        
+     </div> -->
+     
+    
     {% block content %}
     {% endblock %}
     

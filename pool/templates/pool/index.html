@@ -3,19 +3,6 @@
 
 {% endblock %}
 {% block content %}
-
-<p> Hello {{user}}</p>
-
-
-
-{% if tutor.count > 0 %}
-<table>
-    <tr><th>Name</th><th>Disciple</th><th>Level</th></tr>
-    {% for Tutors in tutor %}
-    <tr><td>{{Tutors.name}}</td><td>{{Tutors.disciple}}</td><td>{{Tutors.level}}</td></tr>
-    {% endfor %}
-</table>
-{% endif %}
-
+<a>hello {{user}}</a>
 
 {% endblock %}
